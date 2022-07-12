@@ -128,7 +128,7 @@ function eliminarProductoDelCarrito(id) {
 }
 
 //
-// Acá no logro hacer la función para que todo lo del carrito se elimine. <-------------------------------
+// Acá no logro hacer la función para que todo lo del carrito se elimine. <--------------------------------
 //
 
 //Función eliminar TODOS los productos del carrito
