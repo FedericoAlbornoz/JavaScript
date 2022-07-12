@@ -1,0 +1,1653 @@
+@charset "UTF-8";
+header nav .container-fluid {
+  background-color: #fff;
+  text-decoration: none;
+  list-style: none;
+  color: #772323;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: bolder;
+  letter-spacing: 5px;
+}
+
+header nav .collapse {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header nav .collapse ul li {
+  list-style: none;
+  position: relative;
+}
+
+header nav .collapse ul li i {
+  font-size: 45px;
+  color: #772323;
+}
+
+header nav .collapse ul li #carrito {
+  display: none;
+}
+
+header nav .collapse ul li #carrito h5 {
+  font-size: 25px;
+}
+
+header nav .collapse ul li #carrito button {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+  border-color: #ecd9c6;
+  background-color: #fdd086;
+  color: #772323;
+  border-radius: 10px;
+  height: 43px;
+  width: 200px;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-size: 20px;
+  padding: 5px;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  margin-bottom: 50px;
+}
+
+header nav .collapse ul li:hover #carrito {
+  display: block;
+  color: #772323;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 1;
+  background: #ecd9c6;
+  padding: 20px;
+}
+
+header nav .navbar-nav a {
+  color: #772323;
+  margin: 0px 30px;
+  font-size: 25px;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-image: url(../Desafíos/img/fondo-website1.jpg);
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+}
+
+.main h1 {
+  color: white;
+  letter-spacing: 10px;
+  font: bolder 10em 'Patrick Hand', cursive;
+}
+
+/*----------------------------Home----------------------------*/
+.section__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #772323;
+  margin-top: 30px;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+}
+
+.section__main .section__imagenes {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: #772323;
+  border-radius: 25%;
+  overflow: hidden;
+  -webkit-transform: translatey(0px);
+          transform: translatey(0px);
+  -webkit-animation: float 1.5s ease-in-out infinite;
+          animation: float 1.5s ease-in-out infinite;
+  height: 35%;
+  width: 40%;
+  background-color: #52131c;
+  margin-right: 140px;
+}
+
+.section__main .section__imagenes img {
+  width: 100%;
+  height: auto;
+}
+
+.section__main .section__imagenes h2 {
+  width: 100%;
+  color: #ecd9c6;
+  font-style: italic;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 100px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+    -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    -webkit-transform: translatey(-20px);
+            transform: translatey(-20px);
+    -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+    -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@keyframes float {
+  0% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+    -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    -webkit-transform: translatey(-20px);
+            transform: translatey(-20px);
+    -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+    -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.section__main .carousel-inner {
+  width: 515px;
+}
+
+.section__main .carousel-inner h3 {
+  font: 600 4em 'Patrick Hand', cursive;
+}
+
+.video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 80px;
+  padding: 20px;
+  gap: 40px;
+  background-color: #ecd9c6;
+  width: 90%;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+}
+
+.video .video__galletitas {
+  text-align: start;
+}
+
+.video .video__pastafrola {
+  text-align: end;
+}
+
+.video iframe {
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+}
+
+.descripcion {
+  background-color: #aa806f;
+  margin: 40px 35px;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+}
+
+.descripcion h1 {
+  font-size: 100px;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 10px;
+  color: #fdd086;
+  margin: 2%;
+}
+
+.descripcion h3 {
+  font: 600 4em 'Patrick Hand', cursive;
+  text-align: center;
+  letter-spacing: 5px;
+  color: #ffe6e6;
+}
+
+.descripcion p {
+  font-size: 35px;
+  font-weight: 400;
+  font-family: 'Patrick Hand', cursive;
+  text-align: justify;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color: #ffe6e6;
+  text-indent: 40px;
+  margin: 0% 5% 5%;
+}
+
+.contacto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #3f3f3f;
+  color: #ecd9c6;
+  font-family: 'Patrick Hand', cursive;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.contacto h3 {
+  font: 600 4em 'Patrick Hand', cursive;
+}
+
+.contacto .redes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.contacto ul {
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+}
+
+.contacto ul li a {
+  font-size: 3rem;
+  text-decoration: none;
+  color: #ecd9c6;
+}
+
+/*----------------------------Nosotros----------------------------*/
+.body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 800px 1fr;
+      grid-template-rows: 800px 1fr;
+  justify-items: center;
+  padding: 3%;
+  margin: 2%;
+  background-color: #f7f1e9;
+  gap: 20px;
+}
+
+.body img {
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+}
+
+.body .main__1 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  background-color: #772323;
+  text-align: center;
+  width: 60%;
+  padding: 40px;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+}
+
+.body .main__1 h3 {
+  font: 600 4em 'Patrick Hand', cursive;
+  letter-spacing: 2px;
+  color: #ecd9c6;
+}
+
+.body .main__1 p {
+  font-size: 30px;
+  text-indent: 30px;
+  text-align: justify;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  color: #ecd9c6;
+}
+
+.body .main__2 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  text-align: center;
+  width: 60%;
+  background-color: #caada1;
+  padding: 40px;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+}
+
+.body .main__2 h3 {
+  font: 600 4em 'Patrick Hand', cursive;
+  letter-spacing: 2px;
+  color: #772323;
+}
+
+.body .main__2 p {
+  text-indent: 30px;
+  text-align: justify;
+  font-size: 30px;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  color: #772323;
+}
+
+/*----------------------------Productos----------------------------*/
+h2 {
+  background-color: #772323;
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: 'Patrick Hand', cursive;
+  color: #ecd9c6;
+  font: 900 5em 'Patrick Hand', cursive;
+  margin-top: 25px;
+}
+
+.section__galeria {
+  background-color: #772323;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  text-align: center;
+  gap: 10px;
+  margin-top: 30px;
+  margin-bottom: 3%;
+  cursor: pointer;
+}
+
+.section__galeria p {
+  letter-spacing: 2px;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: lighter;
+  font-size: 25px;
+  color: #772323;
+  background-color: #ecd9c6;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+  margin-left: 24%;
+  margin-top: 3%;
+  border-style: double;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+}
+
+.section__galeria img {
+  margin-top: 50px;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.section__galeria img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.section__galeria .card__price {
+  color: #ecd9c6;
+  padding: 5px 20px;
+  background-color: #3f3f3f;
+  border-radius: 30px;
+  width: 25%;
+  margin-left: 38%;
+}
+
+.section__galeria button {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+  border-color: #ecd9c6;
+  background-color: #fdd086;
+  color: #772323;
+  border-radius: 10px;
+  height: 43px;
+  width: 200px;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-size: 20px;
+  padding: 5px;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+}
+
+.especiales__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  letter-spacing: 2px;
+  font-family: 'Patrick Hand', cursive;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #aa806f;
+  color: white;
+  padding: 50px;
+  margin: 20px 85px;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+}
+
+.especiales__title a {
+  text-decoration: underline;
+  letter-spacing: 2px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 40px;
+  color: white;
+}
+
+/*----------------------------Ediciones Especiales----------------------------*/
+.especiales {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 2px;
+  font-family: 'Patrick Hand', cursive;
+  background-color: #772323;
+  margin: 1%;
+}
+
+.especiales h3 {
+  font: 600 4em 'Patrick Hand', cursive;
+}
+
+.especiales h4 {
+  font: 300 1.5em 'Patrick Hand', cursive;
+}
+
+.especiales .especiales__txt {
+  background-color: #ecd9c6;
+  color: #772323;
+  text-align: center;
+  letter-spacing: 5px;
+  font-size: x-large;
+  margin: 60px 300px 50px;
+  padding: 70px;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+}
+
+.especiales .especiales__galeria {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 75px;
+  padding: 60px 20px;
+  font-size: 30px;
+  color: #772323;
+  text-align: center;
+}
+
+.especiales .especiales__galeria .card {
+  background-color: #ecd9c6;
+  cursor: pointer;
+  border-style: none;
+  -webkit-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  border-radius: 18%;
+}
+
+.especiales .especiales__galeria .card:hover {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+.especiales .especiales__galeria .card__image-container {
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  position: relative;
+}
+
+.especiales .especiales__galeria .card__image-container img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.especiales .especiales__galeria .card__content {
+  padding: 20px;
+}
+
+.especiales .especiales__galeria .card__content .card__title {
+  margin-bottom: 20px;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  font-weight: 900;
+}
+
+.especiales .especiales__galeria .card__content .card__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.especiales .especiales__galeria .card__content .card__info .card__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 25px;
+}
+
+.especiales .especiales__galeria .card__content .card__info .card__price {
+  color: #ecd9c6;
+  width: 17%;
+  padding: 5px 20px;
+  background-color: #3f3f3f;
+  border-radius: 30px;
+}
+
+/*----------------------------Contacto Pie de Página----------------------------*/
+.contacto2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #3f3f3f;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 100%;
+  text-align: center;
+}
+
+.contacto2 a {
+  color: #ecd9c6;
+  text-decoration: none;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Patrick Hand', cursive;
+  letter-spacing: 5px;
+}
+
+.footer {
+  font-family: 'Patrick Hand', cursive;
+  font-style: italic;
+  color: gray;
+}
+
+/*----------------------------Contacto----------------------------*/
+.contact {
+  background-color: #772323;
+  color: #ecd9c6;
+  text-align: center;
+  font-family: 'Patrick Hand', cursive;
+  letter-spacing: 2px;
+  margin-top: 30px;
+}
+
+.contact h2 {
+  padding: 40px;
+  font: 900 5em 'Patrick Hand', cursive;
+}
+
+.contact__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ecd9c6;
+  letter-spacing: 3px;
+  font-family: 'Patrick Hand', cursive;
+  font-color: #772323;
+}
+
+.contact__links .contact__redes {
+  text-align: center;
+}
+
+.contact__links .contact__redes h3 {
+  color: #772323;
+  font: 600 4em 'Patrick Hand', cursive;
+}
+
+.contact__links .contact__redes a {
+  font-size: 5rem;
+  color: #772323;
+  padding: 20px;
+}
+
+.contact__links .contact__form {
+  text-align: center;
+  margin: 90px;
+  border: #772323 solid 1px;
+  width: 80%;
+  font-size: 50px;
+  color: #772323;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+}
+
+.contact__links .contact__form input {
+  font-size: 20px;
+}
+
+/*----------------------------Media Queries----------------------------*/
+@media (min-width: 992px) and (max-width: 1440px) {
+  .header .navbar .container-fluid img {
+    width: 200px;
+  }
+  .header .navbar .container-fluid .navbar-nav a {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+  /*----------------------------Home----------------------------*/
+  .section__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .section__main .section__imagenes {
+    margin: 50px 0px 20px 10px;
+    width: 70%;
+  }
+  .section__main .section__imagenes img {
+    width: 100%;
+  }
+  .section__main .section__imagenes h2 {
+    font-size: 80px;
+  }
+  .video {
+    width: 100%;
+    margin: 30px 0px;
+    text-align: center;
+  }
+  .video .video__galletitas {
+    margin: 25px;
+  }
+  .video .video__pastafrola {
+    margin: 25px;
+  }
+  .descripcion .container .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  /*----------------------------Nosotros----------------------------*/
+  .body {
+    -ms-grid-rows: 900px 1fr;
+        grid-template-rows: 900px 1fr;
+  }
+  .body h2 {
+    font-size: 40px;
+  }
+  .body p {
+    font-size: 30px;
+  }
+  /*----------------------------Productos----------------------------*/
+  .section__galeria {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  .section__galeria .brownies-alfajores p {
+    height: 75px;
+  }
+  .section__galeria .cookies {
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+  .section__galeria .cakes {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+  }
+  .section__galeria .card__price {
+    width: 25%;
+    margin-left: 35%;
+  }
+  .especiales__title {
+    width: 85%;
+    text-align: center;
+  }
+  /*-----------------------------------Especiales-----------------------------------*/
+  .especiales .especiales__txt {
+    width: 50%;
+  }
+  .especiales .especiales__txt h3 {
+    font-size: 60px;
+  }
+  .especiales .especiales__galeria .card .card__content .card__info .card__price {
+    width: 30%;
+  }
+  /*----------------------Contacto---------------------*/
+  .contact {
+    width: 100%;
+  }
+  .contact .contact__links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    padding: 50px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .header nav .container-fluid {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .header nav .container-fluid button {
+    font-size: 6em;
+    color: #772323;
+  }
+  .header nav .container-fluid button .navbar-nav a {
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+  .main h1 {
+    font-size: 8em;
+  }
+  /*----------------------Home---------------------*/
+  .section__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .section__main .section__imagenes {
+    margin: 50px 0px 20px 5px;
+    width: 90%;
+  }
+  .section__main .section__imagenes img {
+    width: 100%;
+  }
+  .section__main .section__imagenes h2 {
+    font-size: 80px;
+  }
+  .video {
+    width: 560px;
+    margin: 30px auto auto auto;
+  }
+  .video .video__galletitas {
+    height: 0px;
+    width: 100%;
+    max-width: 560px;
+    padding-top: 56.25%;
+    position: relative;
+  }
+  .video iframe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+  }
+  .video .video__pastafrola {
+    height: 0px;
+    width: 100%;
+    max-width: 560px;
+    padding-top: 56.25%;
+    position: relative;
+  }
+  .video iframe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+  }
+  .descripcion .container .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  /*----------------------Nosotros---------------------*/
+  .body {
+    -ms-grid-rows: 850px 1fr;
+        grid-template-rows: 850px 1fr;
+  }
+  .body .main__1 {
+    width: 80%;
+  }
+  .body .main__2 {
+    width: 80%;
+  }
+  /*----------------------Productos---------------------*/
+  .section__galeria {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  .section__galeria .brownies-alfajores {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+  }
+  .section__galeria .brownies-alfajores p {
+    height: 100px;
+  }
+  .section__galeria .cookies {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .section__galeria .cakes {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .section__galeria .card__price {
+    width: 50%;
+    margin-left: 25%;
+    height: 0px;
+  }
+  .especiales__title {
+    width: 80%;
+    text-align: center;
+  }
+  .especiales__title h3 {
+    font-size: 40px;
+  }
+  /*----------------------Ediciones Especiales---------------------*/
+  .especiales .especiales__txt {
+    width: 70%;
+  }
+  .especiales .especiales__txt h3 {
+    font-size: 40px;
+  }
+  .especiales .especiales__txt h4 {
+    font-size: 30px;
+  }
+  .especiales .especiales__galeria {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  /*----------------------Contacto---------------------*/
+  .contact {
+    width: 100%;
+  }
+  .contact__links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    padding: 50px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 767px) {
+  .header .navbar .container-fluid {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header .navbar .container-fluid img {
+    width: 250px;
+  }
+  .header .navbar .container-fluid button {
+    font-size: 5em;
+    color: #772323;
+  }
+  .header .navbar .container-fluid a {
+    font-size: 25px;
+    letter-spacing: 0px;
+  }
+  .main h1 {
+    font-size: 100px;
+  }
+  /*----------------------Home---------------------*/
+  .section__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .section__main .section__imagenes {
+    margin: 50px 0px 70px 0px;
+    width: 100%;
+  }
+  .section__main .section__imagenes img {
+    width: 100%;
+  }
+  .section__main .section__imagenes h2 {
+    font-size: 50px;
+  }
+  .section__main .carousel-item img {
+    width: 100%;
+  }
+  .video {
+    width: 560px;
+    margin: 30px auto auto auto;
+  }
+  .video .video__galletitas {
+    height: 0px;
+    width: 100%;
+    max-width: 560px;
+    padding-top: 56.25%;
+    position: relative;
+  }
+  .video iframe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+  }
+  .video .video__pastafrola {
+    height: 0px;
+    width: 100%;
+    max-width: 560px;
+    padding-top: 56.25%;
+    position: relative;
+  }
+  .video iframe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+  }
+  .descripcion {
+    margin: 40px 5px;
+  }
+  .descripcion .container .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .descripcion .container .row h1 {
+    font-size: 50px;
+  }
+  .descripcion .container .row h3 {
+    font-size: 35px;
+  }
+  .descripcion .container .row p {
+    font-size: 25px;
+  }
+  /*----------------------Nosotros---------------------*/
+  .body {
+    -ms-grid-rows: 920px 1fr;
+        grid-template-rows: 920px 1fr;
+  }
+  .body .main__1 {
+    width: 90%;
+  }
+  .body .main__2 {
+    width: 90%;
+  }
+  .body h3 {
+    font-size: 50px;
+  }
+  .body p {
+    text-align: center;
+    font-size: 25px;
+  }
+  /*----------------------Productos---------------------*/
+  .section__galeria {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  .section__galeria h2 {
+    font-size: 50px;
+  }
+  .section__galeria .brownies-alfajores {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .section__galeria .cookies {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+  }
+  .section__galeria .cakes {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .section__galeria .card__price {
+    width: 30%;
+    margin-left: 35%;
+  }
+  .especiales__title {
+    width: 70%;
+    text-align: center;
+  }
+  .especiales__title h3 {
+    font-size: 40px;
+  }
+  /*----------------------Ediciones Especiales---------------------*/
+  .especiales .especiales__txt {
+    width: 90%;
+  }
+  .especiales .especiales__txt h3 {
+    font-size: 40px;
+  }
+  .especiales .especiales__txt h4 {
+    font-size: 35px;
+  }
+  .especiales .especiales__galeria {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .especiales .especiales__galeria .card .card__content .card__info .card__price {
+    width: 30%;
+  }
+  /*----------------------Contacto---------------------*/
+  .contact {
+    width: 100%;
+  }
+  .contact h2 {
+    font-size: 50px;
+  }
+  .contact h3 {
+    font-size: 40px;
+  }
+  .contact__links {
+    width: 100%;
+    padding: 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact__links .contact__form {
+    width: 100%;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 576px) {
+  .header .navbar .container-fluid {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header .navbar .container-fluid img {
+    width: 250px;
+  }
+  .header .navbar .container-fluid button {
+    font-size: 5em;
+    color: #772323;
+  }
+  .header .navbar .container-fluid a {
+    font-size: 25px;
+    letter-spacing: 0px;
+  }
+  .main {
+    width: 100%;
+  }
+  .main h1 {
+    font-size: 3.5em;
+  }
+  /*----------------------Home---------------------*/
+  .section__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    overflow: hidden;
+  }
+  .section__main .section__imagenes {
+    margin: 50px 0px 70px 0px;
+    width: 100%;
+  }
+  .section__main .section__imagenes img {
+    width: 100%;
+  }
+  .section__main .section__imagenes h2 {
+    font-size: 40px;
+    width: 100%;
+  }
+  .section__main #carouselExampleCaptions img {
+    width: 100%;
+  }
+  .video {
+    width: 375px;
+    margin: 30px auto auto auto;
+  }
+  .video .video__galletitas {
+    height: 0%;
+    width: 100%;
+    max-width: 375px;
+    padding-top: 56.25%;
+    position: relative;
+  }
+  .video iframe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+  }
+  .video .video__pastafrola {
+    height: 0%;
+    width: 100%;
+    max-width: 560px;
+    padding-top: 56.25%;
+    position: relative;
+  }
+  .video iframe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+  }
+  .descripcion {
+    margin: 40px 5px;
+  }
+  .descripcion .container .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .descripcion .container .row h1 {
+    font-size: 50px;
+  }
+  .descripcion .container .row h3 {
+    font-size: 35px;
+    margin-top: 30px;
+  }
+  .descripcion .container .row p {
+    font-size: 25px;
+  }
+  .contacto h3 {
+    font-size: 40px;
+  }
+  /*----------------------Nosotros---------------------*/
+  .body {
+    -ms-grid-rows: 1000px 1fr;
+        grid-template-rows: 1000px 1fr;
+  }
+  .body .main__1 {
+    width: 100%;
+  }
+  .body .main__1 img {
+    width: 90%;
+  }
+  .body .main__1 h3 {
+    font-size: 2.5em;
+  }
+  .body .main__1 p {
+    text-align: center;
+    font-size: 1.8em;
+  }
+  .body .main__2 {
+    width: 100%;
+  }
+  .body .main__2 img {
+    width: 90%;
+  }
+  .body .main__2 h3 {
+    font-size: 2.5em;
+  }
+  .body .main__2 p {
+    text-align: center;
+    font-size: 1.8em;
+  }
+  /*----------------------Productos---------------------*/
+  .section__galeria {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  .section__galeria h2 {
+    font-size: 40px;
+    margin-top: 15px;
+  }
+  .section__galeria .brownies-alfajores {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .section__galeria .cookies {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+  }
+  .section__galeria .cookies img {
+    width: 90%;
+  }
+  .section__galeria .cakes {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .section__galeria .cakes img {
+    width: 90%;
+  }
+  .section__galeria .card__price {
+    width: 50%;
+    margin-left: 25%;
+  }
+  .especiales__title {
+    text-align: center;
+    width: 100%;
+    margin: 10px 0px;
+  }
+  .especiales__title h3 {
+    font-size: 40px;
+  }
+  /*----------------------Ediciones Especiales---------------------*/
+  .especiales .especiales__txt {
+    width: 90%;
+  }
+  .especiales .especiales__txt h3 {
+    font-size: 30px;
+  }
+  .especiales .especiales__txt h4 {
+    font-size: 25px;
+  }
+  .especiales .especiales__galeria {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .especiales .especiales__galeria .card .card__content .card__info .card__price {
+    width: 50%;
+  }
+  /*----------------------Contacto---------------------*/
+  .contact {
+    width: 100%;
+  }
+  .contact h2 {
+    font-size: 50px;
+  }
+  .contact__links {
+    width: 100%;
+    padding: 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact__links h3 {
+    font-size: 40px;
+  }
+  .contact__links .contact__form {
+    width: 100%;
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .header .navbar .container-fluid {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header .navbar .container-fluid img {
+    width: 250px;
+  }
+  .header .navbar .container-fluid button {
+    font-size: 5em;
+    color: #772323;
+  }
+  .header .navbar .container-fluid a {
+    font-size: 25px;
+    letter-spacing: 0px;
+  }
+  .main {
+    width: 100%;
+  }
+  .main h1 {
+    font-size: 3em;
+  }
+  /*----------------------Home---------------------*/
+  .section__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    overflow: hidden;
+  }
+  .section__main .section__imagenes {
+    margin: 50px 0px 70px 0px;
+    width: 100%;
+  }
+  .section__main .section__imagenes img {
+    width: 100%;
+  }
+  .section__main .section__imagenes h2 {
+    font-size: 40px;
+    width: 100%;
+  }
+  .section__main #carouselExampleCaptions img {
+    width: 100%;
+  }
+  .video {
+    width: 320px;
+    margin: 30px auto auto auto;
+  }
+  .video .video__galletitas {
+    height: 0%;
+    width: 100%;
+    max-width: 375px;
+    padding-top: 56.25%;
+    position: relative;
+  }
+  .video iframe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+  }
+  .video .video__pastafrola {
+    height: 0%;
+    width: 100%;
+    max-width: 560px;
+    padding-top: 56.25%;
+    position: relative;
+  }
+  .video iframe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+  }
+  .descripcion {
+    margin: 40px 5px;
+  }
+  .descripcion .container .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .descripcion .container .row h1 {
+    font-size: 50px;
+  }
+  .descripcion .container .row h3 {
+    font-size: 35px;
+    margin-top: 30px;
+  }
+  .descripcion .container .row p {
+    font-size: 25px;
+  }
+  .contacto h3 {
+    font-size: 40px;
+  }
+  /*----------------------Nosotros---------------------*/
+  .body {
+    -ms-grid-rows: 1000px 1fr;
+        grid-template-rows: 1000px 1fr;
+  }
+  .body .main__1 {
+    width: 100%;
+  }
+  .body .main__1 img {
+    width: 90%;
+  }
+  .body .main__1 h3 {
+    font-size: 2.5em;
+  }
+  .body .main__1 p {
+    text-align: center;
+    font-size: 1.8em;
+  }
+  .body .main__2 {
+    width: 100%;
+  }
+  .body .main__2 img {
+    width: 90%;
+  }
+  .body .main__2 h3 {
+    font-size: 2.5em;
+  }
+  .body .main__2 p {
+    text-align: center;
+    font-size: 1.8em;
+  }
+  /*----------------------Productos---------------------*/
+  .section__galeria {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  .section__galeria h2 {
+    font-size: 40px;
+    margin-top: 15px;
+  }
+  .section__galeria .brownies-alfajores {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .section__galeria .cookies {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+  }
+  .section__galeria .cookies img {
+    width: 90%;
+  }
+  .section__galeria .cakes {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .section__galeria .cakes img {
+    width: 90%;
+  }
+  .section__galeria .card__price {
+    width: 50%;
+    margin-left: 25%;
+  }
+  .especiales__title {
+    text-align: center;
+    width: 100%;
+    margin: 10px 0px;
+  }
+  .especiales__title h3 {
+    font-size: 40px;
+  }
+  /*----------------------Ediciones Especiales---------------------*/
+  .especiales .especiales__txt {
+    width: 95%;
+    text-align: center;
+    padding: 30px;
+  }
+  .especiales .especiales__txt h3 {
+    font-size: 25px;
+  }
+  .especiales .especiales__txt h4 {
+    font-size: 25px;
+  }
+  .especiales .especiales__galeria {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .especiales .especiales__galeria .card .card__content .card__info .card__price {
+    width: 50%;
+  }
+  /*----------------------Contacto---------------------*/
+  .contact {
+    width: 100%;
+  }
+  .contact h2 {
+    font-size: 40px;
+  }
+  .contact__links {
+    width: 100%;
+    padding: 30px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact__links .contact__redes h3 {
+    font-size: 30px;
+  }
+  .contact__links .contact__form {
+    width: 100%;
+    font-size: 25px;
+  }
+}
