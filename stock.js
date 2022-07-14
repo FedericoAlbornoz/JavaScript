@@ -126,7 +126,7 @@ productos.push ( {
 
 //Array de objetos de Ediciones Especiales
 
-const productosEspeciales = [
+const especiales = [
     {
         id: 1, 
         producto: "Mousse de Maracuyá", 
