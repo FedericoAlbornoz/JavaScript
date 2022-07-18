@@ -41,19 +41,10 @@ function agregarProductoAlCarrito (id){
 
     let productoEnCarrito = carrito.find(productoEnCarrito => productoEnCarrito.id === id);
 
-    if (productoEnCarrito) {
 
-        productoEnCarrito.cantidad++;
+    //Operador avanzado: Ternario (if...else)
 
-        console.log (carrito);
-
-    }else {
-
-        producto.cantidad = 1;
-        carrito.push(producto);
-
-        console.log(carrito);
-    }
+    productoEnCarrito ? productoEnCarrito.cantidad++ : producto.cantidad = 1, carrito.push(producto), console.log(carrito);
 
     renderizarCarrito();
     guardarCarritoLS();
@@ -94,11 +85,9 @@ function eliminarProductoDelCarrito(id) {
 
     carrito[id].cantidad--;
 
-    if (carrito[id].cantidad === 0) {
+    //Operador Lógico AND
 
-        carrito.splice(id, 1); //para que el número no se vaya menor a 0
-    }
-
+    carrito[id].cantidad === 0 && carrito.splice(id, 1);
 
     renderizarCarrito();
 }
