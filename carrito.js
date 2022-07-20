@@ -10,6 +10,7 @@ function renderizarProductos() {
     let galeria = document.getElementById("galeria");
     // let especiales = document.getElementById("especiales");
 
+
     productos.forEach((producto) => {
 
         let productoHTML = `
@@ -17,12 +18,14 @@ function renderizarProductos() {
             <img src=${producto.src}>    
             <p class="nombre">${producto.producto}</p>
             <p class="card__price">$${producto.precio}</p>
-            <button class="btn btn-warning" id="boton-aniadir" onClick="agregarProductoAlCarrito(${producto.id})">Agregar al carrito</button>
+            <button class="btn btn-warning boton-aniadir" id="boton-aniadir" onClick="agregarProductoAlCarrito(${producto.id})">Agregar al carrito</button>
         </div>
         `
 
         galeria.innerHTML += productoHTML;
+        
     });
+
 }
 
 renderizarProductos();
@@ -41,10 +44,30 @@ function agregarProductoAlCarrito (id){
 
     let productoEnCarrito = carrito.find(productoEnCarrito => productoEnCarrito.id === id);
 
+    //Librería
+    Toastify({
+        text: `Tu producto "${producto.producto}" se agregó al carrito.`,
+        icon: "success",
+        timer: 2500,
+        gravity: "bottom",
+        position: "center",
+        backgroundColor: "linear-gradient(to right, #772323, #fdd086)"
+        
+    }).showToast();
 
-    //Operador avanzado: Ternario (if...else)
+    if (productoEnCarrito) {
 
-    productoEnCarrito ? productoEnCarrito.cantidad++ : producto.cantidad = 1, carrito.push(producto), console.log(carrito);
+        productoEnCarrito.cantidad++;
+
+        console.log (carrito);
+
+    }else {
+
+        producto.cantidad = 1;
+        carrito.push(producto);
+
+        console.log(carrito);
+    }
 
     renderizarCarrito();
     guardarCarritoLS();
@@ -68,7 +91,7 @@ function renderizarCarrito(){
             <p class="nombre">${producto.producto}</p>
             <p class="card__price">$${producto.precio}</p>
             <p class="cantidad">Cantidad: ${producto.cantidad}</p>
-            <button class="btn btn-primary" onClick="eliminarProductoDelCarrito(${id})">Eliminar del carrito</button>
+            <button class="btn btn-primary" id="eliminar-producto" onClick="eliminarProductoDelCarrito(${id})">Eliminar del carrito</button>
         </div>
         `
 
@@ -84,10 +107,32 @@ function renderizarCarrito(){
 function eliminarProductoDelCarrito(id) {
 
     carrito[id].cantidad--;
+    
+    //Librería
 
-    //Operador Lógico AND
+    swal({
+        title: "¿Está seguro que quiere eliminar el producto de su carrito?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+        timer: 1500
 
-    carrito[id].cantidad === 0 && carrito.splice(id, 1);
+    }).then( result => {
+        if (result) {
+            swal({
+                title: "¡Okay!",
+                text: "Tu producto se eliminó del carrito.",
+                icon: "success",
+                confirm: "Ok",
+            })
+        }
+    } )
+
+    if (carrito[id].cantidad === 0) {
+
+        carrito.splice(id, 1); //para que el número no se vaya menor a 0
+    }
+
 
     renderizarCarrito();
 }
@@ -106,19 +151,3 @@ function eliminarTodosLosProductos() {
     carrito = [];
     console.log(carrito);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
