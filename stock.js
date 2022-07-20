@@ -126,53 +126,53 @@ productos.push ( {
 
 //Array de objetos de Ediciones Especiales
 
-const especiales = [
-    {
-        id: 1, 
-        producto: "Mousse de Maracuyá", 
-        precio: 450, 
-        cantidad: 2, 
-        src: "img/ediciones-especiales/ee1-mousse-de-chocolate-blanco-con-centro-de-maracuya.jpg alt=Mousse de Chocolate Blanco con Centro de Maracuyá",
-        info: "Mousse de chocolate blanco con centro de maracuyá."
-    },
-    {
-        id: 2, 
-        producto: "Tarta de Chocolate y Crema", 
-        precio: 450, 
-        cantidad: 2, 
-        src: "img/ediciones-especiales/ee2-tarta-de-chocolate-y-crema.jpg alt=Tarta de Chocolate y Crema",
-        info: "Tarta de chocolate con crema."
-    },
-    {
-        id: 3, 
-        producto: "Tarta de Chocolate con Leche y Nuez", 
-        precio: 450, 
-        cantidad: 2, 
-        src: "img/ediciones-especiales/ee3-tarta-de-chocolate-con-leche-y-nuez.jpg alt=Tarta de Chocolate con Leche y Nuez",
-        info: "Tarta de chocolate con leche y nuez con centro de dulce de leche." 
-    },
-    {
-        id: 4, 
-        producto: "Tarta de Avellanas", 
-        precio: 450, 
-        cantidad: 2, 
-        src: "img/ediciones-especiales/ee4-tarta-de-avellanas.jpg alt=Tarta de Avellanas",
-        info: "Sablée de cacao y toffee de pasta de avellanas (nutella) con crema de chocolate y avellanas, y avellanas tostadas."
-    },
-    {
-        id: 5, 
-        producto: "Domo Puro Chocolate", 
-        precio: 450, 
-        cantidad: 2, 
-        src: "img/ediciones-especiales/ee5-domo-puro-chocolate.jpg alt=Domo Puro Chocolate",
-        info: "Sablée de cacao, apareil de chocolate, trufado de chocolate con glaseado espejo de cacao."
-    },
-    {
-        id: 6, 
-        producto: "Tarta de Cacao y Almendras", 
-        precio: 450, 
-        cantidad: 2, 
-        src: "img/ediciones-especiales/ee6-tarta-de-cacao-y-almendras.png alt=Tarta de Cacao y Almendras",
-        info: "Sablée de cacao y almendra, apareil de chocolate, trufado de chocolate con leche y chantilly de chocolate con leche"
-    }
-]
+// const especiales = [
+//     {
+//         id: 1, 
+//         producto: "Mousse de Maracuyá", 
+//         precio: 450, 
+//         cantidad: 2, 
+//         src: "img/ediciones-especiales/ee1-mousse-de-chocolate-blanco-con-centro-de-maracuya.jpg alt=Mousse de Chocolate Blanco con Centro de Maracuyá",
+//         info: "Mousse de chocolate blanco con centro de maracuyá."
+//     },
+//     {
+//         id: 2, 
+//         producto: "Tarta de Chocolate y Crema", 
+//         precio: 450, 
+//         cantidad: 2, 
+//         src: "img/ediciones-especiales/ee2-tarta-de-chocolate-y-crema.jpg alt=Tarta de Chocolate y Crema",
+//         info: "Tarta de chocolate con crema."
+//     },
+//     {
+//         id: 3, 
+//         producto: "Tarta de Chocolate con Leche y Nuez", 
+//         precio: 450, 
+//         cantidad: 2, 
+//         src: "img/ediciones-especiales/ee3-tarta-de-chocolate-con-leche-y-nuez.jpg alt=Tarta de Chocolate con Leche y Nuez",
+//         info: "Tarta de chocolate con leche y nuez con centro de dulce de leche." 
+//     },
+//     {
+//         id: 4, 
+//         producto: "Tarta de Avellanas", 
+//         precio: 450, 
+//         cantidad: 2, 
+//         src: "img/ediciones-especiales/ee4-tarta-de-avellanas.jpg alt=Tarta de Avellanas",
+//         info: "Sablée de cacao y toffee de pasta de avellanas (nutella) con crema de chocolate y avellanas, y avellanas tostadas."
+//     },
+//     {
+//         id: 5, 
+//         producto: "Domo Puro Chocolate", 
+//         precio: 450, 
+//         cantidad: 2, 
+//         src: "img/ediciones-especiales/ee5-domo-puro-chocolate.jpg alt=Domo Puro Chocolate",
+//         info: "Sablée de cacao, apareil de chocolate, trufado de chocolate con glaseado espejo de cacao."
+//     },
+//     {
+//         id: 6, 
+//         producto: "Tarta de Cacao y Almendras", 
+//         precio: 450, 
+//         cantidad: 2, 
+//         src: "img/ediciones-especiales/ee6-tarta-de-cacao-y-almendras.png alt=Tarta de Cacao y Almendras",
+//         info: "Sablée de cacao y almendra, apareil de chocolate, trufado de chocolate con leche y chantilly de chocolate con leche"
+//     }
+// ]
