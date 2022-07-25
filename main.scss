@@ -26,6 +26,8 @@ header {
 
                         #carrito {
                             display: none;
+                            border-color: #3f3f3f;
+
 
                             h5 {
                                 font-size: 25px ;
@@ -37,6 +39,7 @@ header {
                                 background-color: #fdd086;
                                 color: #772323;
                                 border-radius: 10px;
+                                border-color: #3f3f3f;
                                 height: 43px;
                                 width: 200px;
                                 font-family: 'Patrick Hand', cursive;
@@ -78,7 +81,7 @@ header {
     align-items: center;
     text-align: center;
     background: {
-        image: url(../Desafíos/img/fondo-website1.jpg);
+        image: url(./img/fondo-website1.jpg);
         attachment: fixed;
         position: bottom;
         repeat: no-repeat;

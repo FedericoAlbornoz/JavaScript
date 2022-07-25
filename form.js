@@ -1,34 +1,9 @@
-//Evento Input Nombre y Mail sección Contacto
+const form = document.getElementById("form");
+const nombreContacto = document.getElementById("nombre");
+const mailContacto = document.getElementById("email");
+const textoContacto = document.getElementById("text");
 
-const nombre = document.getElementById("nombre");
-nombre.onchange = () => { console.log(nombre.value);}
-
-const mail = document.getElementById("email");
-mail.onchange = () => { console.log(mail.value);}
-
-
-//Evento Input Textarea sección Contacto
-const texto = document.getElementById("text");
-texto.onchange = () => { console.log(texto.value);}
-
-
-//Evento Botones sección Contacto
-const boton = document.getElementById("boton-enviar");
-boton.addEventListener("click", validarFormulario);
-
-const boton2 = document.getElementById("boton-resetear");
-boton2.addEventListener("click", respuestaEvento);
-
-function respuestaEvento() {
-    console.log("Borrar todo");
-}
-
-
-
-//Evento Submit + función para formulario sección Contacto
-
-const formulario = document.getElementById("form");
-formulario.addEventListener("submit", validarFormulario); 
+form.addEventListener("submit", validarFormulario); 
 
 function validarFormulario(e) {
     e.preventDefault();
@@ -36,11 +11,35 @@ function validarFormulario(e) {
     const formulario = e.target;
     console.log(formulario);
 
-    const nombre = document.getElementById("nombre").value;
-    const mail = document.getElementById("email").value;
-    const texto = document.getElementById("text").value;
+    // console.log(nombreContacto.value);
+    // console.log(mailContacto.value);
+    // console.log(textoContacto.value);
 
-    console.log(nombre);
-    console.log(mail);
-    console.log(texto);
+    guardarFormLS();
 }
+
+
+// //Creación de objeto para storage
+
+const datosContacto = {
+    nombre: nombreContacto.value,
+    mail: mailContacto.value,
+    texto: textoContacto.value
+
+}
+
+console.log(datosContacto);
+
+//Storage form
+
+const guardarFormLS = (datosContacto) => {
+   localStorage.setItem("Formulario", JSON.stringify(datosContacto));
+};
+
+const obtenerFormLS = () => {
+    const formStorage = JSON.parse(localStorage.getItem("Formulario"));
+
+};
+
+
+

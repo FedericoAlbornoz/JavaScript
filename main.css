@@ -27,6 +27,7 @@ header nav .collapse ul li i {
 
 header nav .collapse ul li #carrito {
   display: none;
+  border-color: #3f3f3f;
 }
 
 header nav .collapse ul li #carrito h5 {
@@ -40,6 +41,7 @@ header nav .collapse ul li #carrito button {
   background-color: #fdd086;
   color: #772323;
   border-radius: 10px;
+  border-color: #3f3f3f;
   height: 43px;
   width: 200px;
   font-family: 'Patrick Hand', cursive;
@@ -81,7 +83,7 @@ header nav .navbar-nav a {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  background-image: url(../Desafíos/img/fondo-website1.jpg);
+  background-image: url(./img/fondo-website1.jpg);
   background-attachment: fixed;
   background-position: bottom;
   background-repeat: no-repeat;

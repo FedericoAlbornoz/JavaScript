@@ -1,11 +1,15 @@
 //Variables
 const carrito = [];
+const vaciarCarrito = document.querySelector("#vaciar")
 
+    
 //Función para renderizar productos
 
 function renderizarProductos() {
 
     let galeria = document.getElementById("galeria");
+    // let especiales = document.getElementById("especiales");
+
 
     productos.forEach((producto) => {
 
@@ -14,51 +18,21 @@ function renderizarProductos() {
             <img src=${producto.src}>    
             <p class="nombre">${producto.producto}</p>
             <p class="card__price">$${producto.precio}</p>
-            <button class="btn btn-warning" onClick="agregarProductoAlCarrito(${producto.id})">Agregar al carrito</button>
+            <button class="btn btn-warning boton-aniadir" id="boton-aniadir" onClick="agregarProductoAlCarrito(${producto.id})">Agregar al carrito</button>
         </div>
         `
 
         galeria.innerHTML += productoHTML;
+        
     });
+
 }
 
 renderizarProductos();
 
-//
-//  Acá hay un error que sigo sin poder resolver. No me aparecen estos elementos en la seccion Ediciones Especiales. <-------------------------------
-//
 
-function renderizarProductosEspeciales() {
 
-    let especiales = document.getElementById("especiales");
 
-    productosEspeciales.forEach((productoEspecial) => {
-
-        let productoEspecialHTML = `
-        <div class="especiales__galeria" id="especiales__galeria">
-            <div class="card">
-                <div class="card__image-container">
-                    <img src=${productoEspecial.src}>
-                </div>
-                <div class="card__content">
-                    <p class="card__title">
-                        ${productoEspecial.producto}
-                    </p>
-                    <div class="card__info">
-                        <p class="card__text">${productoEspecial.info}</p>
-                        <p class="card__price">$${productoEspecial.precio}</p>
-                    </div>
-                    <button class="btn btn-warning" onClick="agregarProductoAlCarrito(${productoEspecial.id})">Agregar al carrito</button>            
-                </div>
-            </div>
-        </div>
-        `
-
-        especiales.innerHTML += productoEspecialHTML;
-    });
-}
-
-renderizarProductosEspeciales();
 
 
 //Función para agregar productos al carrito
@@ -70,24 +44,36 @@ function agregarProductoAlCarrito (id){
 
     let productoEnCarrito = carrito.find(productoEnCarrito => productoEnCarrito.id === id);
 
-    if (productoEnCarrito) {
+    //Librería
+    Toastify({
+        text: `Tu producto "${producto.producto}" se agregó al carrito.`,
+        icon: "success",
+        timer: 2500,
+        gravity: "bottom",
+        position: "center",
+        style: { 
+            background: "#3f3f3f",
+            color: "#fdd086"
+        },
+        
+    }).showToast();
 
-        productoEnCarrito.cantidad++;
+    //Operador Ternario
+    productoEnCarrito ? productoEnCarrito.cantidad++ :  producto.cantidad = 1, carrito.push(producto)
 
-        console.log (carrito);
 
-    }else {
+    //Acá LS para carrito. Chequear devolución "Segunda Entrega Proyecto Final". Ojo con el storage.js
+    // localStorage.setItem("Carrito de Compras", JSON.stringify(carrito))
 
-        producto.cantidad = 1;
-        carrito.push(producto);
+    console.log(carrito);
 
-        console.log(carrito);
-    }
 
     renderizarCarrito();
-    calcularTotal()
+    guardarCarritoLS();
 }
 
+
+//Función para renderizar carrito
 
 function renderizarCarrito(){
 
@@ -104,7 +90,7 @@ function renderizarCarrito(){
             <p class="nombre">${producto.producto}</p>
             <p class="card__price">$${producto.precio}</p>
             <p class="cantidad">Cantidad: ${producto.cantidad}</p>
-            <button class="btn btn-primary" onClick="eliminarProductoDelCarrito(${id})">Eliminar del carrito</button>
+            <button class="btn btn-primary" id="eliminar-producto" onClick="eliminarProductoDelCarrito(${id})">Eliminar del carrito</button>
         </div>
         `
 
@@ -113,58 +99,67 @@ function renderizarCarrito(){
 }
 
 
+
+
 //Función para eliminar producto del carrito
 
 function eliminarProductoDelCarrito(id) {
 
     carrito[id].cantidad--;
+    
+    //Librería
 
-    if (carrito[id].cantidad === 0) {
+    swal({
+        title: "¿Está seguro que quiere eliminar el producto de su carrito?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
 
-        carrito.splice(id, 1); //para que el número no se vaya menor a 0
-    }
+    }).then( result => {
+        if (result) {
+            swal({
+                title: "¡Okay!",
+                text: "Tu producto se eliminó del carrito.",
+                icon: "success",
+                confirm: "Ok",
+            })
+        }
+    } )
 
+  //Operador Lógico AND
+    carrito[id].cantidad === 0 && carrito.splice(id, 1); //para que el número no se vaya menor a 0
     renderizarCarrito();
 }
 
-//
-// Acá no logro hacer la función para que todo lo del carrito se elimine. <--------------------------------
-//
+
+
 
 //Función eliminar TODOS los productos del carrito
 
-// function eliminarTodosLosProductos() {
+function eliminarTodosLosProductos() {
 
-// }
+    //Evento Borrar de Carrito sección Productos
+    const botonVaciar = document.getElementById("Vaciar-carrito");
+    botonVaciar.addEventListener("click", eliminarTodosLosProductos);
+        
+    carrito = [];
+    console.log(carrito);
+}
 
 
 
 
-//
-// No logro que me aparezca el total en la parte del carrito. <-------------------------------
-//
 
+//Fetch - Ruta relativa
+const lista = document.getElementById("listado")
 
-// Función para sumar total de la compra
+fetch ("/stock.json")
+    .then ((resp) => resp.json())
+    .then ((data) => {
 
-function calcularTotal() {
-    
-    let total = 0;
-
-    carrito.forEach((producto) => {
-
-        total += producto.precio * producto.cantidad;
+        renderizarCarrito(data);
     })
 
-    console.log(total);
-
-    const t = document.getElementById("total");
-    
-    const t2 = document.createElement("h6");
-    t2.innerHTML=`<h6>El total de la compra es de: $${total}</h6>`;
-
-    t.appendChild(t2);
-}
 
 
 
