@@ -1,3 +1,32 @@
+//Fetch - Ruta relativa
+
+const lista = document.getElementById("listado")
+
+fetch ("/stock.json")
+    .then ((resp) => resp.json())
+    .then ((stock) => {
+
+        stock.forEach ((producto) => {
+            const li = document.createElement ("li")
+            li.innerHTML = `
+            <div>
+                <img src=${producto.src}>    
+                <p class="nombre">${producto.producto}</p>
+                <p class="card__price">$${producto.precio}</p>
+                <button class="btn btn-warning boton-aniadir" id="boton-aniadir" onClick="agregarProductoAlCarrito(${producto.id})">Agregar al carrito</button>
+            </div>
+            `
+
+            lista.append(li)
+        });
+    })
+
+    .catch ((error) => {
+        console.log(error);
+    });
+
+
+
 //Variables
 const carrito = [];
 const vaciarCarrito = document.querySelector("#vaciar")
@@ -150,15 +179,7 @@ function eliminarTodosLosProductos() {
 
 
 
-//Fetch - Ruta relativa
-const lista = document.getElementById("listado")
 
-fetch ("/stock.json")
-    .then ((resp) => resp.json())
-    .then ((data) => {
-
-        renderizarCarrito(data);
-    })
 
 
 
