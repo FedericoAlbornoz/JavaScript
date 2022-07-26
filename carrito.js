@@ -1,62 +1,35 @@
-//Fetch - Ruta relativa
-
-const lista = document.getElementById("listado");
-let stock;
-
-fetch("./stock.json")
-    .then ((resp) => resp.json())
-    .then ((stock) => {
-
-        stock.forEach ((unStock) => {
-            const li = document.createElement ("li")
-            li.innerHTML = `
-            <div>
-                <img src=${unStock.src}>    
-                <p class="nombre">${unStock.producto}</p>
-                <p class="card__price">$${unStock.precio}</p>
-                <button class="btn btn-warning boton-aniadir" id="boton-aniadir" onClick="agregarProductoAlCarrito(${unStock.id})">Agregar al carrito</button>
-            </div>
-            `
-
-            lista.append(li)
-        });
-    })
-
-    .catch ((error) => {
-        console.log(error);
-    });
-
-
-
 //Variables
+const contadorCarrito = document.getElementById("contadorCarrito");
+const contenedorCarrito = document.getElementById("carrito");
+const botonVaciar = document.getElementById('vaciar-carrito');
+const precioTotal = document.getElementById('precioTotal');
 const carrito = [];
-const vaciarCarrito = document.querySelector("#vaciar")
 
-    
-//Función para renderizar productos
+
+//Funciones
+
+//Renderizar/Mostrar productos usando DOM
 
 function renderizarProductos() {
-
     let galeria = document.getElementById("galeria");
-    // let especiales = document.getElementById("especiales");
-
-
-    stock.forEach((unStock) => {
-
+    productos.forEach((producto) => {
         let productoHTML = `
         <div>
-            <img src=${unStock.src}>    
-            <p class="nombre">${unStock.producto}</p>
-            <p class="card__price">$${unStock.precio}</p>
-            <button class="btn btn-warning boton-aniadir" id="boton-aniadir" onClick="agregarProductoAlCarrito(${unStock.id})">Agregar al carrito</button>
+            <img src=${producto.src}>    
+            <p class="nombre">${producto.producto}</p>
+            <p class="card__price">$${producto.precio}</p>
+            <button class="btn btn-warning boton-aniadir" id="boton-aniadir" onClick="agregarProductoAlCarrito(${producto.id})">Agregar al carrito</button>
         </div>
         `
-
         galeria.innerHTML += productoHTML;
         
+        //Boton agregado con DOM, evento click para añadir producto al carrito
+        const boton = document.getElementById(`boton-aniadir`);
+    
+        boton.addEventListener('click', () => {
+        agregarProductoAlCarrito(producto.id)
+        })
     });
-
-
 }
 
 renderizarProductos();
@@ -64,20 +37,18 @@ renderizarProductos();
 
 
 
-
-
-//Función para agregar productos al carrito
+//Agregar productos al carrito
 
 function agregarProductoAlCarrito (id){
 
     //Compara que los elementos de mi array Productos coincidan con los id donde yo hago click
-    let unStock = stock.find(unStock => unStock.id === id);
+    let producto = productos.find(producto => producto.id === id);
 
     let productoEnCarrito = carrito.find(productoEnCarrito => productoEnCarrito.id === id);
 
     //Librería
     Toastify({
-        text: `Tu producto "${unStock.producto}" se agregó al carrito.`,
+        text: `Tu producto "${producto.producto}" se agregó al carrito.`,
         icon: "success",
         timer: 2500,
         gravity: "bottom",
@@ -90,45 +61,43 @@ function agregarProductoAlCarrito (id){
     }).showToast();
 
     //Operador Ternario
-    productoEnCarrito ? productoEnCarrito.cantidad++ :  unStock.cantidad = 1, carrito.push(unStock)
-
-
-    //Acá LS para carrito. Chequear devolución "Segunda Entrega Proyecto Final". Ojo con el storage.js
-    // localStorage.setItem("Carrito de Compras", JSON.stringify(carrito))
+    productoEnCarrito ? productoEnCarrito.cantidad++ :  producto.cantidad = 1, carrito.push(producto)
 
     console.log(carrito);
 
-
-    renderizarCarrito();
-    guardarCarritoLS();
+    renderizarCarrito()
+    guardarCarritoStorage()
 }
 
 
-//Función para renderizar carrito
+
+//Función para renderizar/mostrar/actualizar el carrito
 
 function renderizarCarrito(){
 
-    let carritoHTML = document.getElementById("carrito");
-    console.log(carritoHTML);
+    contenedorCarrito.innerHTML = " ";
 
-    let htmlCarrito = " ";
+    carrito.forEach ((producto, id) => {
+        const div = document.createElement("div")
+        div.className = ("productoEnCarrito")
 
-    carrito.forEach ((unStock, id) => {
-
-        htmlCarrito += `
+        div.innerHTML += `
         <div>
-            <img src=${unStock.src}>    
-            <p class="nombre">${unStock.producto}</p>
-            <p class="card__price">$${unStock.precio}</p>
-            <p class="cantidad">Cantidad: ${unStock.cantidad}</p>
+            <img src=${producto.src}>    
+            <p class="nombre">${producto.producto}</p>
+            <p class="card__price">$${producto.precio}</p>
+            <p class="cantidad" id="cantidad">Cantidad: ${producto.cantidad}</p>
             <button class="btn btn-primary" id="eliminar-producto" onClick="eliminarProductoDelCarrito(${id})">Eliminar del carrito</button>
         </div>
         `
 
-        carritoHTML.innerHTML = htmlCarrito;
+        contenedorCarrito.appendChild(div);
     });
-}
 
+    //Precio total en carrito
+    precioTotal.innerText = carrito.reduce((acc, producto) => acc + producto.cantidad * producto.precio, 0);
+
+}
 
 
 
@@ -162,33 +131,57 @@ function eliminarProductoDelCarrito(id) {
     renderizarCarrito();
 }
 
+//Botón vaciar carrito
+
+botonVaciar.addEventListener("click", () => {
+    carrito.length = 0
+    renderizarCarrito();
+})
 
 
 
-//Función eliminar TODOS los productos del carrito
 
-function eliminarTodosLosProductos() {
 
-    //Evento Borrar de Carrito sección Productos
-    const botonVaciar = document.getElementById("Vaciar-carrito");
-    botonVaciar.addEventListener("click", eliminarTodosLosProductos);
-        
-    carrito = [];
-    console.log(carrito);
+
+//Storage del carrito
+
+const cantidad = document.getElementById('cantidad');
+const precioTotalFinal = document.getElementById('precioTotal');
+
+function guardarCarritoStorage() {
+    const guardarCarritoEnLS = JSON.stringify(carrito);
+    localStorage.setItem("carrito", guardarCarritoEnLS);
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('carrito')){
+        carrito = JSON.parse(localStorage.getItem('carrito'))
+        renderizarCarrito();
+    }
+})
 
 
 
+//Fetch
 
-
-
-
-
-
-
-
-
+const lista = document.querySelector("#listado")
+fetch("./stock.json")
+    .then( (response) => response.json() )
+    .then( (resultado) => {
+        resultado.forEach ((producto) => {
+            const li = document.createElement("li")
+            li.innerHTML = `
+            <div>
+                <img src=${producto.src}>    
+                <p class="nombre">${producto.producto}</p>
+                <p class="card__price">$${producto.precio}</p>
+                <p class="cantidad" id="cantidad">Cantidad: ${producto.cantidad}</p>
+                <button class="btn btn-primary" id="eliminar-producto" onClick="eliminarProductoDelCarrito(${id})">Eliminar del carrito</button>
+            </div>
+            `
+            lista.append(li);
+        })
+})
 
 
 
