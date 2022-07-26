@@ -1,19 +1,20 @@
 //Fetch - Ruta relativa
 
-const lista = document.getElementById("listado")
+const lista = document.getElementById("listado");
+let stock;
 
-fetch ("/stock.json")
+fetch("./stock.json")
     .then ((resp) => resp.json())
     .then ((stock) => {
 
-        stock.forEach ((producto) => {
+        stock.forEach ((unStock) => {
             const li = document.createElement ("li")
             li.innerHTML = `
             <div>
-                <img src=${producto.src}>    
-                <p class="nombre">${producto.producto}</p>
-                <p class="card__price">$${producto.precio}</p>
-                <button class="btn btn-warning boton-aniadir" id="boton-aniadir" onClick="agregarProductoAlCarrito(${producto.id})">Agregar al carrito</button>
+                <img src=${unStock.src}>    
+                <p class="nombre">${unStock.producto}</p>
+                <p class="card__price">$${unStock.precio}</p>
+                <button class="btn btn-warning boton-aniadir" id="boton-aniadir" onClick="agregarProductoAlCarrito(${unStock.id})">Agregar al carrito</button>
             </div>
             `
 
@@ -40,20 +41,21 @@ function renderizarProductos() {
     // let especiales = document.getElementById("especiales");
 
 
-    productos.forEach((producto) => {
+    stock.forEach((unStock) => {
 
         let productoHTML = `
         <div>
-            <img src=${producto.src}>    
-            <p class="nombre">${producto.producto}</p>
-            <p class="card__price">$${producto.precio}</p>
-            <button class="btn btn-warning boton-aniadir" id="boton-aniadir" onClick="agregarProductoAlCarrito(${producto.id})">Agregar al carrito</button>
+            <img src=${unStock.src}>    
+            <p class="nombre">${unStock.producto}</p>
+            <p class="card__price">$${unStock.precio}</p>
+            <button class="btn btn-warning boton-aniadir" id="boton-aniadir" onClick="agregarProductoAlCarrito(${unStock.id})">Agregar al carrito</button>
         </div>
         `
 
         galeria.innerHTML += productoHTML;
         
     });
+
 
 }
 
@@ -69,13 +71,13 @@ renderizarProductos();
 function agregarProductoAlCarrito (id){
 
     //Compara que los elementos de mi array Productos coincidan con los id donde yo hago click
-    let producto = productos.find(producto => producto.id === id);
+    let unStock = stock.find(unStock => unStock.id === id);
 
     let productoEnCarrito = carrito.find(productoEnCarrito => productoEnCarrito.id === id);
 
     //Librería
     Toastify({
-        text: `Tu producto "${producto.producto}" se agregó al carrito.`,
+        text: `Tu producto "${unStock.producto}" se agregó al carrito.`,
         icon: "success",
         timer: 2500,
         gravity: "bottom",
@@ -88,7 +90,7 @@ function agregarProductoAlCarrito (id){
     }).showToast();
 
     //Operador Ternario
-    productoEnCarrito ? productoEnCarrito.cantidad++ :  producto.cantidad = 1, carrito.push(producto)
+    productoEnCarrito ? productoEnCarrito.cantidad++ :  unStock.cantidad = 1, carrito.push(unStock)
 
 
     //Acá LS para carrito. Chequear devolución "Segunda Entrega Proyecto Final". Ojo con el storage.js
@@ -111,14 +113,14 @@ function renderizarCarrito(){
 
     let htmlCarrito = " ";
 
-    carrito.forEach ((producto, id) => {
+    carrito.forEach ((unStock, id) => {
 
         htmlCarrito += `
         <div>
-            <img src=${producto.src}>    
-            <p class="nombre">${producto.producto}</p>
-            <p class="card__price">$${producto.precio}</p>
-            <p class="cantidad">Cantidad: ${producto.cantidad}</p>
+            <img src=${unStock.src}>    
+            <p class="nombre">${unStock.producto}</p>
+            <p class="card__price">$${unStock.precio}</p>
+            <p class="cantidad">Cantidad: ${unStock.cantidad}</p>
             <button class="btn btn-primary" id="eliminar-producto" onClick="eliminarProductoDelCarrito(${id})">Eliminar del carrito</button>
         </div>
         `
