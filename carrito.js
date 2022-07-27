@@ -4,6 +4,7 @@ const contenedorCarrito = document.getElementById("carrito");
 const botonVaciar = document.getElementById('vaciar-carrito');
 const precioTotal = document.getElementById('precioTotal');
 const carrito = [];
+const productos = [];
 
 
 //Funciones
@@ -87,7 +88,7 @@ function renderizarCarrito(){
             <p class="nombre">${producto.producto}</p>
             <p class="card__price">$${producto.precio}</p>
             <p class="cantidad" id="cantidad">Cantidad: ${producto.cantidad}</p>
-            <button class="btn btn-primary" id="eliminar-producto" onClick="eliminarProductoDelCarrito(${id})">Eliminar del carrito</button>
+            <button class="btn btn-primary" id="eliminar-producto" onClick="eliminarProductoDelCarrito(${producto.id})">Eliminar del carrito</button>
         </div>
         `
 
@@ -169,18 +170,10 @@ fetch("./stock.json")
     .then( (response) => response.json() )
     .then( (resultado) => {
         resultado.forEach ((producto) => {
-            const li = document.createElement("li")
-            li.innerHTML = `
-            <div>
-                <img src=${producto.src}>    
-                <p class="nombre">${producto.producto}</p>
-                <p class="card__price">$${producto.precio}</p>
-                <p class="cantidad" id="cantidad">Cantidad: ${producto.cantidad}</p>
-                <button class="btn btn-primary" id="eliminar-producto" onClick="eliminarProductoDelCarrito(${id})">Eliminar del carrito</button>
-            </div>
-            `
-            lista.append(li);
+            productos.push(producto);
         })
+
+        renderizarProductos()
 })
 
 
