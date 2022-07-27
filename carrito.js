@@ -127,6 +127,7 @@ function eliminarProductoDelCarrito(id) {
         }
     } )
 
+    
   //Operador Lógico AND
     carrito[id].cantidad === 0 && carrito.splice(id, 1); //para que el número no se vaya menor a 0
     renderizarCarrito();
