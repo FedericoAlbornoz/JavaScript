@@ -83,13 +83,18 @@ function renderizarCarrito(){
         div.className = ("productoEnCarrito")
 
         div.innerHTML += `
-        <div>
-            <img src=${producto.src}>    
-            <p class="nombre">${producto.producto}</p>
-            <p class="card__price">$${producto.precio}</p>
-            <p class="cantidad" id="cantidad">Cantidad: ${producto.cantidad}</p>
+        <hr>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"><img src=${producto.src} class="imagenEnCarrito"></th>                       
+                    <th scope="col" class="nombre">${producto.producto}</th>
+                    <th scope="col" class="card__price">$${producto.precio}</th>
+                    <th scope="col" class="cantidad" id="cantidad">Cantidad: ${producto.cantidad}</th>
+                </tr>
+            </thead>  
+        </table>
             <button class="btn btn-primary" id="eliminar-producto" onClick="eliminarProductoDelCarrito(${producto.id})">Eliminar del carrito</button>
-        </div>
         `
 
         contenedorCarrito.appendChild(div);
@@ -176,6 +181,8 @@ fetch("./stock.json")
 
         renderizarProductos()
 })
+
+
 
 
 

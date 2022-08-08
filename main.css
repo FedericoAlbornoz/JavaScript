@@ -33,6 +33,21 @@ header nav .collapse ul li #carrito {
 header nav .collapse ul li #carrito h5 {
   font-size: 25px;
 }
+header nav .collapse ul li #carrito .productoEnCarrito .table {
+  width: 50rem;
+}
+
+header nav .collapse ul li #carrito .productoEnCarrito .table thead .nombre {
+  width: 20rem;
+}
+
+header nav .collapse ul li #carrito .productoEnCarrito .table thead {
+  text-align: center;
+  vertical-align: middle;
+}
+header nav .collapse ul li #carrito .productoEnCarrito .table thead tr th img {
+  width: 100px;
+} 
 
 header nav .collapse ul li #carrito button {
   cursor: -webkit-grabbing;
@@ -42,17 +57,18 @@ header nav .collapse ul li #carrito button {
   color: #772323;
   border-radius: 10px;
   border-color: #3f3f3f;
-  height: 43px;
-  width: 200px;
+  height: 33px;
+  width: 160px;
   font-family: 'Patrick Hand', cursive;
   font-weight: bolder;
   letter-spacing: 2px;
-  font-size: 20px;
+  font-size: 15px;
   padding: 5px;
   -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
           box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
   text-decoration: none;
   margin-bottom: 50px;
+  margin-left: 5px;
 }
 
 header nav .collapse ul li:hover #carrito {
