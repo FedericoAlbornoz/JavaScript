@@ -15,73 +15,6 @@ header nav .collapse {
           justify-content: center;
 }
 
-header nav .collapse ul li {
-  list-style: none;
-  position: relative;
-}
-
-header nav .collapse ul li i {
-  font-size: 45px;
-  color: #772323;
-}
-
-header nav .collapse ul li #carrito {
-  display: none;
-  border-color: #3f3f3f;
-}
-
-header nav .collapse ul li #carrito h5 {
-  font-size: 25px;
-}
-header nav .collapse ul li #carrito .productoEnCarrito .table {
-  width: 50rem;
-}
-
-header nav .collapse ul li #carrito .productoEnCarrito .table thead .nombre {
-  width: 20rem;
-}
-
-header nav .collapse ul li #carrito .productoEnCarrito .table thead {
-  text-align: center;
-  vertical-align: middle;
-}
-header nav .collapse ul li #carrito .productoEnCarrito .table thead tr th img {
-  width: 100px;
-} 
-
-header nav .collapse ul li #carrito button {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
-  border-color: #ecd9c6;
-  background-color: #fdd086;
-  color: #772323;
-  border-radius: 10px;
-  border-color: #3f3f3f;
-  height: 33px;
-  width: 160px;
-  font-family: 'Patrick Hand', cursive;
-  font-weight: bolder;
-  letter-spacing: 2px;
-  font-size: 15px;
-  padding: 5px;
-  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-  text-decoration: none;
-  margin-bottom: 50px;
-  margin-left: 5px;
-}
-
-header nav .collapse ul li:hover #carrito {
-  display: block;
-  color: #772323;
-  position: absolute;
-  right: 0;
-  top: 100%;
-  z-index: 1;
-  background: #ecd9c6;
-  padding: 20px;
-}
-
 header nav .navbar-nav a {
   color: #772323;
   margin: 0px 30px;
@@ -415,6 +348,102 @@ h2 {
   color: #ecd9c6;
   font: 900 5em 'Patrick Hand', cursive;
   margin-top: 25px;
+}
+
+ul {
+  margin-left: 10%;
+}
+
+ul li {
+  list-style: none;
+  position: relative;
+}
+
+ul li i {
+  font-size: 45px;
+  color: #772323;
+}
+
+ul li #carrito {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-color: #3f3f3f;
+  background-color: #772323;
+  width: 50%;
+}
+
+ul li #carrito h5 {
+  font-size: 25px;
+}
+ul li #carrito .productoEnCarrito .table {
+  width: 50rem;
+}
+
+ul li #carrito .productoEnCarrito .table thead {
+  text-align: center;
+  vertical-align: middle;
+}
+ul li #carrito .productoEnCarrito .table thead tr {
+  background-color: #caada1;
+  border-color: #772323;
+}
+
+ul li #carrito .productoEnCarrito .table thead .nombre {
+  width: 20rem;
+}
+ul li #carrito .productoEnCarrito .table thead tr th img {
+  width: 100px;
+} 
+
+ul li #carrito button {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+  border-color: #ecd9c6;
+  background-color: #fdd086;
+  color: #772323;
+  border-radius: 10px;
+  border-color: #3f3f3f;
+  height: 33px;
+  width: 160px;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-size: 15px;
+  padding: 5px;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+ul li .precioProducto {
+  font-family: 'Patrick Hand', cursive;
+  font-weight: bolder;
+  font-size: 25px;
+  color: #772323;
+}
+
+ul li #vaciar-carrito, #terminar-compra {
+  cursor: -webkit-grabbing;
+  cursor: pointer;
+  border-color: #ecd9c6;
+  background-color: #fdd086;
+  color: #772323;
+  border-radius: 10px;
+  border-color: #3f3f3f;
+  height: 40px;
+  width: 300px;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-size: 20px;
+  -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  margin-bottom: 50px;
+  margin-left: 20px;
+
 }
 
 .section__galeria {
@@ -1669,3 +1698,4 @@ h2 {
     font-size: 25px;
   }
 }
+

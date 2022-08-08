@@ -36,18 +36,7 @@
                             <a class="nav-link" href="./ediciones-especiales.html">Ediciones Especiales</a>
                             <a class="nav-link" href="./contacto.html">Contacto</a>
                         </div>
-                        <ul>
-                            <li class="submenu">    
-                                <i class="bi bi-cart4"></i>
-                                
-                                <div id="carrito">
-                                    <h5>Carrito</h5>
-                                    <!-- Tabla con productos seleccionados por el usuario-->
-                                    <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
-                                    <input type="reset" value="Vaciar carrito" id="vaciar-carrito">
-                                </div>
-                            </li>                   
-                        </ul>
+                        
                     </div>
                 </div>
             </nav>
@@ -57,6 +46,20 @@
         </div> 
 
         <h2>Mirá nuestros productos</h2>
+
+        <ul>
+            <li class="submenu">    
+                <i class="bi bi-cart4"><h3>Carrito</h3></i>
+                
+                <div id="carrito">
+                    <!-- Tabla con productos seleccionados por el usuario-->
+                </div>
+
+                <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+                <input type="reset" value="Vaciar carrito" id="vaciar-carrito">
+                <input type="submit" value="Terminar compra" id="terminar-compra">
+            </li>                   
+        </ul>
         
         <section class="section__galeria" id="galeria">        
         <!-- Cards agregadas con DOM -->
