@@ -2,9 +2,10 @@
 const contadorCarrito = document.getElementById("contadorCarrito");
 const contenedorCarrito = document.getElementById("carrito");
 const botonVaciar = document.getElementById('vaciar-carrito');
+const botonTerminar = document.getElementById("terminar-compra");
 const precioTotal = document.getElementById('precioTotal');
-const carrito = [];
-const productos = [];
+let carrito = [];
+let productos = [];
 
 
 //Funciones
@@ -61,8 +62,13 @@ function agregarProductoAlCarrito (id){
         
     }).showToast();
 
-    //Operador Ternario
-    productoEnCarrito ? productoEnCarrito.cantidad++ :  producto.cantidad = 1, carrito.push(producto)
+
+    if (productoEnCarrito) {
+        productoEnCarrito.cantidad++        
+    } else {
+        producto.cantidad = 1;
+        carrito.push(producto)
+    }
 
     console.log(carrito);
 
@@ -94,7 +100,7 @@ function renderizarCarrito(){
                 </tr>
             </thead>  
         </table>
-            <button class="btn btn-primary" id="eliminar-producto" onClick="eliminarProductoDelCarrito(${producto.id})">Eliminar del carrito</button>
+            <button class="btn btn-primary" id="eliminar-producto" onClick="eliminarProductoDelCarrito(${id})">Eliminar del carrito</button>
         `
 
         contenedorCarrito.appendChild(div);
@@ -104,6 +110,7 @@ function renderizarCarrito(){
     precioTotal.innerText = carrito.reduce((acc, producto) => acc + producto.cantidad * producto.precio, 0);
 
 }
+
 
 
 
@@ -145,9 +152,26 @@ botonVaciar.addEventListener("click", () => {
     renderizarCarrito();
 })
 
+//Botón terminar compra
 
+botonTerminar.addEventListener("click", () => {
+    swal({
+        title: "¿Ha finalizado su compra?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
 
-
+    }).then( result => {
+        if (result) {
+            swal({
+                title: "¡Perfecto!",
+                text: "Muchas gracias por confiar en nosotros. ¡Esperamos verlo nuevamente por acá!",
+                icon: "success",
+                confirm: "Ok",
+            })
+        }
+    } )
+})
 
 
 //Storage del carrito
